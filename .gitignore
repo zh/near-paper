@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+tmp-project
+package-lock.json
+legacy
+.idea
+.env
+dist/*
+paper-*.json
