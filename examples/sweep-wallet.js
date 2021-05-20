@@ -1,5 +1,6 @@
 const yargs = require('yargs');
 const NearPaperWallet = require('../lib');
+const { getKeyStore } = require('./utils');
 require('dotenv').config();
 
 if (
@@ -38,7 +39,7 @@ const walletName = argv.wallet.split('.')[0];
 
 async function sweepWallet(name, sender, receiver) {
   try {
-    const wallet = new NearPaperWallet(sender);
+    const wallet = new NearPaperWallet(sender, getKeyStore());
     wallet.load(walletName, '../');
     // console.log(JSON.stringify(wallet, null, 2));
     const result = await wallet.sweep(receiver);

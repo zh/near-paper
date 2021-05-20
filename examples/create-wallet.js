@@ -1,5 +1,6 @@
 const yargs = require('yargs');
 const NearPaperWallet = require('../lib');
+const { getKeyStore } = require('./utils');
 require('dotenv').config();
 
 if (!process.env.SENDER || process.env.SENDER === '')
@@ -18,7 +19,7 @@ const AMOUNT = argv.amount || '1.5';
 
 async function createWallet(sender, amount) {
   try {
-    const wallet = new NearPaperWallet(sender);
+    const wallet = new NearPaperWallet(sender, getKeyStore());
     await wallet.create(amount.toString());
     wallet.save();
     console.log(JSON.stringify(wallet, null, 2));
