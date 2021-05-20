@@ -113,7 +113,7 @@ This will also create JSON file in the root directory with name *paper-162144507
 }
 ```
 
-> TODO: Create QR code with a link to fund this wallet. Something like `https://wallet.testnet.near.org/send-money/{paper_wallet_name}`
+The example will also show a QR code with link like `https://wallet.testnet.near.org/send-money/{paper_wallet_name}` on the console. You can fund the wallet by scanning the QR code. It will redirect you to the web wallet site as a usual 'Receive' QR code.
 
 ### Sweep all funds from the paper wallet
 
