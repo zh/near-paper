@@ -1,6 +1,6 @@
 {
   "name": "near-paper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Creating and sweeping paper wallets on NEAR blockchain.",
   "main": "lib/index.js",
   "directories": {
@@ -43,6 +43,7 @@
     "dotenv": "^9.0.2",
     "eslint": "^7.26.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "qrcode-terminal": "^0.12.0",
     "uglify-es": "^3.3.9",
     "yargs": "^17.0.1"
   }

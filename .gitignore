@@ -7,3 +7,4 @@ legacy
 .env
 dist/*
 paper-*.json
+*.tgz
