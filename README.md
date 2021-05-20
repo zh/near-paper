@@ -40,6 +40,9 @@ SENDER=somebody.testnet
 
 Also there is need from **access keys** (created for example with [near login](https://github.com/near/near-cli#near-login)). For more information see also [access keys NEAR documentation](https://github.com/near/near-cli#near-login).
 
+The [example/utils.js](examples/utils.js) file provides example for using local file key store.
+> TODO: browser local storage as key store example.
+
 ```js
 const NearPaperWallet = require('near-paper');
 const AMOUNT = '1.5'
@@ -47,7 +50,8 @@ const RECEIVER = 'somebody.testnet'
 
 async function paperWalletTests(sender, amount) {
   try {
-    const wallet = new NearPaperWallet(process.env.SENDER);
+    const keyStore = ... // provide key store here
+    const wallet = new NearPaperWallet(process.env.SENDER, keyStore);
 
     // create wallet with 1.5 NEAR initial amount
     await wallet.create(AMOUNT);
