@@ -1,6 +1,6 @@
 {
   "name": "near-paper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Creating and sweeping paper wallets on NEAR blockchain.",
   "main": "lib/index.js",
   "directories": {
@@ -35,7 +35,6 @@
   "dependencies": {
     "bn": "^1.0.5",
     "bn.js": "^5.2.0",
-    "js-sha256": "^0.9.0",
     "near-api-js": "^0.30.0"
   },
   "devDependencies": {
