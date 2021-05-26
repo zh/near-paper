@@ -1,6 +1,6 @@
 {
   "name": "near-paper",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Creating and sweeping paper wallets on NEAR blockchain.",
   "main": "lib/index.js",
   "directories": {
