@@ -1,3 +1,4 @@
+const path = require('path');
 const yargs = require('yargs');
 const NearPaperWallet = require('../lib');
 const { getKeyStore, showQrCode } = require('./utils');
@@ -26,7 +27,7 @@ async function createWallet(sender, amount) {
   try {
     const wallet = new NearPaperWallet(sender, getKeyStore());
     await wallet.create(amount.toString());
-    wallet.save();
+    wallet.save(path.join(__dirname, '..'));
     showQrCode(wallet.accountId, process.env.NETWORK);
     console.log(JSON.stringify(wallet, null, 2));
   } catch (error) {

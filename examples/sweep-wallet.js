@@ -1,3 +1,4 @@
+const path = require('path');
 const yargs = require('yargs');
 const NearPaperWallet = require('../lib');
 const { getKeyStore } = require('./utils');
@@ -40,7 +41,7 @@ const walletName = argv.wallet.split('.')[0];
 async function sweepWallet(name, sender, receiver) {
   try {
     const wallet = new NearPaperWallet(sender, getKeyStore());
-    wallet.load(walletName, '../');
+    wallet.load(walletName, path.join(__dirname, '..'));
     // console.log(JSON.stringify(wallet, null, 2));
     const result = await wallet.sweep(receiver);
     console.log('Transaction Results: ', result.transaction);

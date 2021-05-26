@@ -1,3 +1,4 @@
+const path = require('path');
 const yargs = require('yargs');
 const NearPaperWallet = require('../lib');
 const { getKeyStore } = require('./utils');
@@ -24,11 +25,12 @@ const walletName = argv.wallet.split('.')[0];
 
 async function deleteWallet(name, sender) {
   try {
+    const walletPath = path.join(__dirname, '..');
     const wallet = new NearPaperWallet(sender, getKeyStore());
-    wallet.load(name, '../');
+    wallet.load(name, walletPath);
     // console.log(JSON.stringify(wallet, null, 2));
     await wallet.delete();
-    wallet.save();
+    wallet.save(walletPath);
   } catch (error) {
     console.error('error in deleteWallet: ', error);
   }
